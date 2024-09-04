@@ -1,0 +1,8 @@
+{
+  "VerifierModule#Verifier": "0xf6BaD83b767aAC6ABE13FB73B6dA9e9bf16A93a0",
+  "VoteModule#Vote": "0x3D64674d27F18Bb7E1766408A5C4D245660e1A5f",
+  "VotingFactoryModule#VotingFactory": "0x0dF92B6B72AaF0DA51607bF6CAbDBF7cb6457aB5",
+  "VotingFactory2Module#VotingFactory": "0x45Ec26D32748Cd6053ec0BCFa822d1b239E2776C",
+  "Vote3Module#Vote": "0x0C20E45A25D7D1BB64586bE21EAe645069999835",
+  "VotingFactory3Module#VotingFactory": "0x284049B3Dd6e4d5f9a159F1c0816e6A5D4C78E9d"
+}

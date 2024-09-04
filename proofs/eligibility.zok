@@ -1,0 +1,42 @@
+0// Voter eligibility circuit
+const field COUNTRY_HASH = 0x97b7ce94075626ed89e4a8a9fb7835587d9d33f05a2d26f9f0e17c6d3e97b22f;
+
+
+def calculate_age(field year, field month, field day) -> bool {
+    field current_year = 2024;
+    field current_month = 8;
+    field current_day = 10;
+
+    field mut age = current_year - year;
+
+    bool subtract_one = month > current_month || (month == current_month && day > current_day);
+    age = if subtract_one { age - 1 } else { age };
+
+    return age >= 18;
+}
+
+def verify_citizenship(u64 nationality) -> bool {
+    return nationality == COUNTRY_HASH;
+}
+   
+
+def verify_voter_registration(field voter_id) -> bool {
+    return voter_id > 100000 && voter_id < 999999;
+}
+
+struct VoterData {
+    field year;
+    field month;
+    field day;
+    u64 nationality_hash;
+    field voter_id;
+}
+
+def main(field year, field month, field day, u64 nationality_hash, field voter_id) -> bool {
+
+    bool age = calculate_age(year, month, day);
+    bool is_citizen = verify_citizenship(nationality_hash);
+    bool is_registered_voter = verify_voter_registration(voter_id);
+
+    return age  && is_citizen && is_registered_voter;
+}
